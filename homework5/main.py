@@ -20,18 +20,10 @@ from google.appengine.api import users
 import webapp2
 
 
-#MAIN_PAGE_HTML = """\
-#<html>
-  #<body>
-    
-  #</body>
-#</html>
-#"""
-
 class Root(webapp2.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('<form action="/test" method="post">\nPlease input <i>EINGLISH TWO</i> words!\n<br><input type=text name="word1"><br><input type=text name=word2><br><div><input type=submit value=TRANSMISSION></div></form>')
+        self.response.write('<form action="/test" method="post">Please input <i>EINGLISH TWO</i> words!\n<br><input type=text name="word1"><br><input type=text name=word2><br><div><input type=submit value=TRANSMISSION></div></form>')
    
 
 
@@ -67,7 +59,7 @@ class WordShuffle(webapp2.RequestHandler):
                 num += 1
                 
         self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('<h1> answer is %s <h1>' % str3)
+        self.response.write('<h1> answer is %s </h1>' % str3)
 
 app = webapp2.WSGIApplication([
     ('/', Root),
